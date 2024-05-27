@@ -1,0 +1,116 @@
+@import url("reset.css");
+
+.field{
+    width: 626px;
+    height: 416px;
+    margin: 0 auto;
+    aspect-ratio: 626 / 416;
+    position: relative;
+    background: url("../img/net.jpg") center / 100%;
+}
+.ball{
+    border-radius: 50%;
+    width: 30Spx;
+    height: 30Spx;
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%, 0);
+    background: url("../img/ball.png") 0 0 / 100%;
+
+    animation: ball 500ms ease 1.8s forwards;
+
+}
+.man{
+    position: absolute;
+    transform: translate(-50%, 0);
+    animation: run 800ms ease-in 1s forwards, add-shoot 0s linear 1800ms forwards;
+    width: 150px;
+    bottom: -40px;
+    left: 30%;
+}
+
+.man img{
+    max-width: 100%;
+    animation: shoot 0s linear 1800ms forwards;
+}
+
+.keeper{
+    width: 150px;
+    position: absolute;
+   left: 440px;
+   bottom: 105px;
+   animation: keeper-shoot 1s linear 1100ms forwards;
+}
+
+.keeper img{
+    max-width: 100%;
+    animation: shoot 0s linear 1600ms forwards;
+}
+
+@keyframes ball {
+   0%{
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    bottom: 25px;
+   } 
+   100%{
+    width: 20px;
+    height: 20px;
+    left: 55%;
+    bottom:195px;
+   }
+}
+
+@keyframes run {
+  0%{
+    width: 150px;
+    bottom: -40px;
+    left: 30%;
+  }
+  100%{
+    left: 50%;
+    bottom: 20px;
+    width: 90px;
+  }
+}
+
+@keyframes shoot {
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes add-shoot {
+    0%{
+      background-color: transparent;
+    }
+    100%{
+    width: 200px;
+    height: 210px;
+    left: 40%;
+     background: url("../img/shoot.png") 0 0 / 150px no-repeat;
+    }
+  }
+  @keyframes keeper-shoot {
+    0%{
+      background-color: transparent;
+    }
+    70%{
+      width: 200px;
+      aspect-ratio: 427 / 197;
+      left: 400px;
+      transform: scale(-1,1);
+      background: url("../img/shovcoskyj.png") 0 0 / 100% no-repeat;
+    }
+    100%{
+      width: 200px;
+      aspect-ratio: 427 / 197;
+      left: 350px;
+      transform: scale(-1,1);
+      background: url("../img/shovcoskyj.png") 0 0 / 100% no-repeat;
+    }
+  }
